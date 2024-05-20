@@ -22,4 +22,6 @@ llm = ChatOpenAI(api_key=my_openai_api_key)
 chain = prompt | llm
 
 # Invoke the chain
+print('============================================================================')
 print(chain.invoke({"input": "how can langsmith help with testing?"}))
+print('============================================================================')

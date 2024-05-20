@@ -12,4 +12,6 @@ my_openai_api_key = os.getenv('OPENAI_API_KEY')
 llm = ChatOpenAI(api_key=my_openai_api_key)
 
 # Invoke the OpenAI model
+print('============================================================================')
 print(llm.invoke("how can langsmith help with testing?"))
+print('============================================================================')

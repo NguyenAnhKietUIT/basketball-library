@@ -30,6 +30,7 @@ docs = loader.load()
 # Define the embedding
 embeddings = OpenAIEmbeddings()
 
+# Indexing the documents
 text_splitter = RecursiveCharacterTextSplitter()
 documents = text_splitter.split_documents(docs)
 vector = FAISS.from_documents(documents, embeddings)
@@ -46,10 +47,13 @@ retriever = vector.as_retriever()
 retriever_chain = create_history_aware_retriever(llm, retriever, prompt)
 
 chat_history = [HumanMessage(content="Can LangSmith help test my LLM applications?"), AIMessage(content="Yes!")]
+
+print('============================================================================')
 print(retriever_chain.invoke({
     "chat_history": chat_history,
     "input": "Tell me how"
 }))
+print('============================================================================')
 
 prompt = ChatPromptTemplate.from_messages([
     ("system", "Answer the user's questions based on the below context:\n\n{context}"),
@@ -61,7 +65,10 @@ document_chain = create_stuff_documents_chain(llm, prompt)
 retrieval_chain = create_retrieval_chain(retriever_chain, document_chain)
 
 chat_history = [HumanMessage(content="Can LangSmith help test my LLM applications?"), AIMessage(content="Yes!")]
+
+print('============================================================================')
 print(retrieval_chain.invoke({
     "chat_history": chat_history,
     "input": "Tell me how"
 }))
+print('============================================================================')

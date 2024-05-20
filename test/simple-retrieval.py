@@ -28,6 +28,8 @@ docs = loader.load()
 # Define the embedding
 embeddings = OpenAIEmbeddings()
 
+# Indexing the documents
+
 text_splitter = RecursiveCharacterTextSplitter()
 documents = text_splitter.split_documents(docs)
 vector = FAISS.from_documents(documents, embeddings)

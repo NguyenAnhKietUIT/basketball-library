@@ -26,4 +26,6 @@ output_parser = StrOutputParser()
 chain = prompt | llm | output_parser
 
 # Invoke the chain
+print('============================================================================')
 print(chain.invoke({"input": "how can langsmith help with testing?"}))
+print('============================================================================')
