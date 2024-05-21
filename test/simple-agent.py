@@ -1,16 +1,18 @@
 import os
-from langchain import hub
 from dotenv import load_dotenv
-from langchain_openai import ChatOpenAI
-from langchain.agents import AgentExecutor
-from langchain_openai import OpenAIEmbeddings
+
+from langchain import hub
+from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 from langchain_community.vectorstores import FAISS
-from langchain.agents import create_openai_functions_agent
-from langchain.tools.retriever import create_retriever_tool
-from langchain_core.messages import HumanMessage, AIMessage
 from langchain_community.document_loaders import WebBaseLoader
-from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.tools.tavily_search import TavilySearchResults
+
+from langchain.agents import AgentExecutor, create_openai_functions_agent
+from langchain.tools.retriever import create_retriever_tool
+
+from langchain_core.messages import HumanMessage, AIMessage
+
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 # Load environment variables from .env file
 load_dotenv()

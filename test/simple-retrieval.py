@@ -1,14 +1,18 @@
 import os
 from dotenv import load_dotenv
-from langchain_openai import ChatOpenAI
+
+from langchain_openai import ChatOpenAI, OpenAIEmbeddings
+
 from langchain_core.documents import Document
-from langchain_openai import OpenAIEmbeddings
-from langchain_community.vectorstores import FAISS
-from langchain.chains import create_retrieval_chain
 from langchain_core.prompts import ChatPromptTemplate
+
+from langchain_community.vectorstores import FAISS
 from langchain_community.document_loaders import WebBaseLoader
-from langchain_text_splitters import RecursiveCharacterTextSplitter
+
+from langchain.chains import create_retrieval_chain
 from langchain.chains.combine_documents import create_stuff_documents_chain
+
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 # Load environment variables from .env file
 load_dotenv()

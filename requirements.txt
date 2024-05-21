@@ -7,5 +7,7 @@ python-dotenv
 beautifulsoup4
 faiss-cpu
 langchainhub
-"langserve[all]"
+# "langserve[all]"
 wikipedia
+elasticsearch
+langchain-elasticsearch
