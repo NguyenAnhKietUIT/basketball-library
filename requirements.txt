@@ -8,3 +8,4 @@ beautifulsoup4
 faiss-cpu
 langchainhub
 "langserve[all]"
+wikipedia
