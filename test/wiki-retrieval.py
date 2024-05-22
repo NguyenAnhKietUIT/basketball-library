@@ -27,3 +27,4 @@ for question in questions:
     chat_history.append((question, result["answer"]))
     print(f"-> **Question**: {question} \n")
     print(f"**Answer**: {result['answer']} \n")
+    

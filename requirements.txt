@@ -11,3 +11,4 @@ langchainhub
 wikipedia
 elasticsearch
 langchain-elasticsearch
+llama-index
